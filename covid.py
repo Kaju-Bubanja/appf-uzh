@@ -17,6 +17,7 @@ df = df[df['Country'].isin(countries)]
 df['Cases'] = df[['Confirmed', 'Recovered', 'Deaths']].sum(axis=1)
 
 # Section 4 - Restructuring our Data
+print(df)
 df = df.pivot(index='Date', columns='Country', values='Cases')
 countries = list(df.columns)
 covid = df.copy()
